@@ -4,14 +4,45 @@
 #define MAX_PARKING_SIZE 5
 #define MAX_PLATE_LENGTH 20
 
-//Function to display menu
-void show_menu()
+
+int main() 
 {
-    printf("\n------ Car Parking Management System ------\n");
+    int choice;
 
-    printf("1. Park a car\n");
-    printf("2. Remove a car\n");
-    printf("3. View parked cars\n");
-    printf("4. Exit\n");
+    do 
+    {
+        printf("\n------ Car Parking Management System ------\n\n");
+        printf("1. Park a car\n");
+        printf("2. Remove a car\n");
+        printf("3. View parked cars\n");
+        printf("4. Exit\n");
 
+        printf("Enter your choice : ");
+        scanf("%d", &choice);
+
+        switch(choice) 
+        {
+            case 1 :
+                park_car();
+                break;
+
+            case 2 :
+                remove_car();
+                break;
+
+            case 3 :
+                view_cars();
+                break;
+
+            case 4 :
+                printf("Exit...\n");
+                break;
+
+            default :
+                printf("Invalid choice! Try again!\n");
+        }
+
+    } while(choice != 4);
+
+    return 0;
 }
