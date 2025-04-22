@@ -4,6 +4,28 @@
 #define MAX_PARKING_SIZE 5
 #define MAX_PLATE_LENGTH 20
 
+char parking[MAX_PARKING_SIZE][MAX_PLATE_LENGTH];
+int count = 0;
+
+
+//Function to park a car
+void park_car() 
+{
+    if(count < MAX_PARKING_SIZE) 
+    {
+        printf("Enter Car Number Plate : ");
+        scanf("%s", parking[count]);
+
+        count++;
+
+        printf("Car Parked successfully!\n");
+    }
+    else 
+    {
+        printf("Parking is Full!\n");
+    }
+}
+
 
 int main() 
 {
@@ -17,7 +39,7 @@ int main()
         printf("3. View parked cars\n");
         printf("4. Exit\n");
 
-        printf("Enter your choice : ");
+        printf("Enter Your Choice : ");
         scanf("%d", &choice);
 
         switch(choice) 
