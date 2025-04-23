@@ -27,6 +27,49 @@ void park_car()
 }
 
 
+//Function to remove a car
+void remove_car() 
+{
+    if(count == 0) 
+    {
+        printf("No Cars to Remove!\n");
+
+        return;
+    }
+
+    char plate[MAX_PLATE_LENGTH];
+
+    printf("Enter Number Plate of the Car to Remove : ");
+    scanf("%s", plate);
+
+    int found = 0;
+    
+    for(int i = 0; i < count; i++) 
+    {
+        if(strcmp(parking[i], plate) == 0) 
+        {
+            found = 1;
+    
+            for(int j = i; j < count - 1; j++) 
+            {
+                strcpy(parking[j], parking[j + 1]);
+            }
+
+            count--;
+
+            printf("Car Removed Successfully!\n");
+
+            break;
+        }
+    }
+
+    if(!found) 
+    {
+        printf("Car Not Found!\n");
+    }
+}
+
+
 int main() 
 {
     int choice;
