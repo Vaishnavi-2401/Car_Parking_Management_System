@@ -1,5 +1,5 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
 
 #define MAX_PARKING_SIZE 5
 #define MAX_PLATE_LENGTH 20
@@ -18,8 +18,8 @@ void park_car()
 
         count++;
 
-        printf("Car Parked successfully!\n");
-    }
+        printf("Car Parked Successfully!\n");
+    } 
     else 
     {
         printf("Parking is Full!\n");
@@ -43,13 +43,13 @@ void remove_car()
     scanf("%s", plate);
 
     int found = 0;
-    
+
     for(int i = 0; i < count; i++) 
     {
         if(strcmp(parking[i], plate) == 0) 
         {
             found = 1;
-    
+
             for(int j = i; j < count - 1; j++) 
             {
                 strcpy(parking[j], parking[j + 1]);
@@ -70,16 +70,36 @@ void remove_car()
 }
 
 
+//Function to view parked cars
+void view_cars() 
+{
+    if(count == 0) 
+    {
+        printf("No Cars Parked!\n");
+    } 
+    else 
+    {
+        printf("Parked Cars : \n");
+
+        for(int i = 0; i < count; i++) 
+        {
+            printf("%d. %s\n", i + 1, parking[i]);
+        }
+    }
+}
+
+
 int main() 
 {
     int choice;
 
-    do 
+    do
     {
-        printf("\n------ Car Parking Management System ------\n\n");
-        printf("1. Park a car\n");
-        printf("2. Remove a car\n");
-        printf("3. View parked cars\n");
+        printf("\n------ Car Parking Management System ------\n");
+
+        printf("1. Park a Car\n");
+        printf("2. Remove a Car\n");
+        printf("3. View Parked Car's\n");
         printf("4. Exit\n");
 
         printf("Enter Your Choice : ");
@@ -100,14 +120,13 @@ int main()
                 break;
 
             case 4 :
-                printf("Exit...\n");
+                printf("THANK YOU\n");
                 break;
 
             default :
-                printf("Invalid choice! Try again!\n");
+                printf("Invalid Choice! Try Again!\n");
         }
-
-    } while(choice != 4);
+    }while(choice != 4);
 
     return 0;
 }
