@@ -95,7 +95,7 @@ int main()
 
     do
     {
-        printf("\n------ Car Parking Management System ------\n");
+        printf("\n------ Car Parking Management System ------\n\n");
 
         printf("1. Park a Car\n");
         printf("2. Remove a Car\n");
